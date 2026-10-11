@@ -1,0 +1,31 @@
+﻿
+@model IEnumerable<FeedbackManagement.Models.Feedback>
+
+@{
+    ViewBag.Title = "Feedback List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Feedback Management</h2>
+
+<p>
+    @Html.ActionLink("Give New Feedback", "Create", "Feedback",
+        null, new { @class = "btn btn-primary" })
+</p>
+
+<hr />
+
+<h3>Submitted Feedback</h3>
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; border-radius: 8px;">
+            <h4>@item.Name</h4>
+            <p><strong>Email:</strong> @item.Email</p>
+            <p><strong>Rating:</strong> @item.Rating / 5</p>
+            <p><strong>Comments:</strong> @item.Comments</p>
+        </div>
+    }
+}

@@ -1,0 +1,79 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Feedback Management</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f2f5fa;
+        }
+
+        header {
+            background: #173b70;
+            color: white;
+            padding: 20px;
+        }
+
+        nav a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+        }
+
+        main {
+            width: 80%;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            width: 95%;
+            margin: 8px 0;
+        }
+
+        .btn {
+            background: #1769aa;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Feedback Management System</h2>
+        <nav>
+            @Html.ActionLink("Home", "Index", "Feedback",
+                null, new { style = "color:white" })
+            |
+            @Html.ActionLink("Give Feedback", "Create", "Feedback",
+                null, new { style = "color:white" })
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+</body>
+</html>
